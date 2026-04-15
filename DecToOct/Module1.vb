@@ -14,7 +14,9 @@
         Dim strOctNum = ""
         Dim uTempVal = uNumber
         Do While (uTempVal > 0)
-            strOctNum = CUInt(uTempVal Mod 8).ToString() + strOctNum
+            Dim nOctDigit = uTempVal Mod 8
+            Dim chOctDigit = Chr(nOctDigit + Asc("0"c))
+            strOctNum = chOctDigit + strOctNum
             uTempVal \= 8
         Loop
         If (strOctNum.Length = 0) Then
